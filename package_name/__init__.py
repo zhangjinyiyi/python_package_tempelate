@@ -10,6 +10,7 @@
 @Desc    :   None
 """
 
+__package_name__ = "package_name"
 __author__ = "Jinyi Zhang"
 __author_email__ = "zhangjinyi.cn@hotmail.com"
 __description__ = "library description"

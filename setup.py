@@ -41,20 +41,19 @@ author = get_property('__author__')
 author_email = get_property('__author_email__')
 description = get_property('__description__')
 version = get_property('__version__')
+package_name = get_property('__package_name__')
 
-package_dir = os.path.dirname(os.path.abspath(__file__))
-project_name = os.path.basename(package_dir)
-packages = [project_name]
-packages += [project_name + "." + name for name in os.listdir(package_dir) if os.path.isdir(os.path.join(package_dir, name))]
+package_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), package_name)
+packages = [package_name]
+packages += [package_name + "." + name for name in os.listdir(package_dir) if os.path.isdir(os.path.join(package_dir, name))]
 
 setup(
-    name=project_name,
+    name=package_name,
     version=version,
     description=description,
     author=author,
     author_email=author_email,
-    packages=packages,
-    package_dir={project_name: package_dir}
+    packages=packages
 )
             
 
